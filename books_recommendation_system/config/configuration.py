@@ -2,7 +2,16 @@ import os
 import sys
 from books_recommendation_system.logger.log import logging
 from books_recommendation_system.exception.exception_handler import AppException
-from books_recommendation_system.entity import DataIngestionConfig
+from books_recommendation_system.entity.config_entity import (
+    DataIngestionConfig,
+    DataValidationConfig,
+    DataTransformationConfig,
+    ModelTrainerConfig,
+    ModelRecommendationConfig
+)
+
+from books_recommendation_system.constant import *
+from books_recommendation_system.utils.util import read_yaml_file
 
 class AppConfiguration:
     def __init__(self, config_file_path: str = CONFIG_FILE_PATH):

@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: books_recommendation_system
+Version: 0.0.1
+Summary: A small local packages for ML based books recommendations
+Home-page: https://github.com/Ayush-DataAnalyst/Books-Recommendation-System
+Author: Ayush-DataAnalyst
+Author-email: ayushshimpi02@gmail.com
+License: MIT
+Requires-Python: >=3.10
+Description-Content-Type: text/markdown
+Dynamic: author
+Dynamic: author-email
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license
+Dynamic: requires-python
+Dynamic: summary
+
+# Books-Recommendation-System

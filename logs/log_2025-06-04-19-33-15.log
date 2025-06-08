@@ -1,4 +1,0 @@
-[2025-06-04 19:33:15,706] root - INFO - ====================Data Ingestion log started.==================== 
-[2025-06-04 19:33:15,706] root - INFO - Data Ingestion Config: <books_recommendation_system.entity.config_entity.DataIngestionConfig object at 0x000001B692935A90>
-[2025-06-04 19:33:15,712] root - INFO - Downloading data from https://github.com/Ayush-DataAnalyst/Books-Recommendation-System/tree/main/Books_data into file artifact\dataset\raw_data\Books_data
-[2025-06-04 19:33:16,510] root - INFO - Downloaded data from https://github.com/Ayush-DataAnalyst/Books-Recommendation-System/tree/main/Books_data into file artifact\dataset\raw_data\Books_data

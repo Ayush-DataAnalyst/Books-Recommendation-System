@@ -1,29 +1,47 @@
+import os
 import sys
+
 
 class AppException(Exception):
     """
-    Custom exception class for detailed error reporting.
-    Captures filename, line number, and the actual error message.
+    Organization: iNeuron Intelligence Private Limited
+    AppException is customized exception class designed to capture refined details about exception
+    such as python script file line number along with error message
+    With custom exception one can easily spot source of error and provide quick fix.
+    
     """
 
     def __init__(self, error_message: Exception, error_detail: sys):
-        super().__init__(str(error_message))
-        self.error_message = self.get_detailed_error_message(error_message, error_detail)
+        """
+        :param error_message: error message in string format
+        """
+        super().__init__(error_message)
+        self.error_message = AppException.error_message_detail(error_message, error_detail=error_detail)
 
     @staticmethod
-    def get_detailed_error_message(error: Exception, error_detail: sys) -> str:
+    def error_message_detail(error:Exception, error_detail:sys):
         """
-        Returns detailed error message including file name and line number.
+        error: Exception object raise from module
+        error_detail: is sys module contains detail information about system execution information.
         """
         _, _, exc_tb = error_detail.exc_info()
-        file_name = exc_tb.tb_frame.f_code.co_filename if exc_tb else "Unknown"
-        line_number = exc_tb.tb_lineno if exc_tb else "Unknown"
-        
-        return (f"Error occurred in script [{file_name}], "
-                f"line [{line_number}]: {error}")
+        #extracting file name from exception traceback
+        file_name = exc_tb.tb_frame.f_code.co_filename 
 
-    def __str__(self):
-        return self.error_message
+        #preparing error message
+        error_message = f"Error occurred python script name [{file_name}]" \
+                        f" line number [{exc_tb.tb_lineno}] error message [{error}]."
+
+        return error_message
 
     def __repr__(self):
-        return f"{self.__class__.__name__}('{self.error_message}')"
+        """
+        Formating object of AppException
+        """
+        return AppException.__name__.__str__()
+
+    def __str__(self):
+        """
+        Formating how a object should be visible if used in print statement.
+        """
+        return self.error_message
